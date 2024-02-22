@@ -11,20 +11,20 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import java.util.logging.Logger;
 import org.junit.jupiter.api.Test;
-
+ 
 /**
  * Unit test for simple App.
  */
 public class EstudianteTest {
     private static final Logger LOG = Logger.getLogger(EstudianteTest.class.getName());
-    
+
     @Test
     public void datosCompletos(){
         LOG.info("Inicio de la prueba datos completos");
         Estudiante estudiante = new Estudiante("Carlos","arias","234561","314256363","ccasas@gmail.com",(byte)33);
         assertEquals("Carlos",estudiante.nombres());
         assertEquals("arias",estudiante.apellidos());
-        assertEquals("@",estudiante.nombres());
+        assertEquals("ccasas@gmail.com",estudiante.correo());
         assertEquals("Carlos",estudiante.nombres());
         assertEquals("Carlos",estudiante.nombres());
         assertEquals("Carlos",estudiante.nombres());
@@ -32,10 +32,10 @@ public class EstudianteTest {
     @Test
     public void datosNulos(){
         LOG.info("Inicio de la prueba datos completos");
-        Estudiante estudiante = new Estudiante("Carlos","Casas Gomez","234561","314256363","ccasas@gmail.com",(byte)33);
+        Estudiante estudiante = new Estudiante("Carlos","arias","234561","314256363","ccasas@gmail.com",(byte)33);
         assertEquals("Carlos",estudiante.nombres());
         assertEquals("arias",estudiante.apellidos());
-        assertEquals("@",estudiante.nombres());
+        assertEquals("ccasas@gmail.com",estudiante.correo());
         assertEquals("Carlos",estudiante.nombres());
         assertEquals("Carlos",estudiante.nombres());
         assertEquals("Carlos",estudiante.nombres());
