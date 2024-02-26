@@ -22,12 +22,12 @@ public class AnimalTest {
     @Test
     public void datosCompletos() {
         LOG.info("Iniciado de la prueba de datos completos");
-        Animal animal = new Animal("Mailo", "Roedor", "Hamster", (byte) 2, "M", "Cafe", 1.2);
+        Animal animal = new Animal("Mailo", "Roedor", "Hamster", (byte) 2, "Macho", "Cafe", 1.2);
         assertEquals("Mailo", animal.nombre());
         assertEquals("Roedor", animal.especie());
         assertEquals("Hamster", animal.raza());
         assertEquals(2, animal.edad());
-        assertEquals("M", animal.genero());
+        assertEquals("Macho", animal.genero());
         assertEquals("Cafe", animal.color());
         assertEquals(1.2, animal.peso());
         LOG.info("Finalización de la prueba de datos completos");
@@ -54,8 +54,6 @@ public class AnimalTest {
         LOG.info("Iniciando de la prueba de datos negativos");
         assertThrows(Throwable.class, () -> new Animal("Mailo", "Roedor", "Hamster", (byte) -2, "M", "Cafe", -1.2));
         LOG.info("finalizacion de la prueba de datos negativos");
-       
-    }
 
-    
+    }
 }
