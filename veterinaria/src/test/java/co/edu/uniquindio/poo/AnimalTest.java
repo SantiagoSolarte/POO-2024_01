@@ -36,7 +36,7 @@ public class AnimalTest {
     @Test
     public void datosNulos() {
         LOG.info("Iniciado de la prueba de datos nulos");
-        assertThrows(Throwable.class, () -> new Animal(null, null, null, (byte) 0, null, null, 0));
+        assertThrows(Throwable.class, () -> new Animal("Mailo", null, null, (byte) 0, null, null, 0));
         LOG.info("Finalizacion prueba datos nulos");
 
     }
