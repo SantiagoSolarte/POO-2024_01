@@ -16,13 +16,14 @@ import org.junit.jupiter.api.Test;
 /**
  * Unit test for simple App.
  */
-public class AnimalTest {
-    private static final Logger LOG = Logger.getLogger(AnimalTest.class.getName());
+public class MascotaTest {
+    private static final Logger LOG = Logger.getLogger(MascotaTest.class.getName());
 
     @Test
     public void datosCompletos() {
         LOG.info("Iniciado de la prueba de datos completos");
-        Animal animal = new Animal("Mailo", "Roedor", "Hamster", (byte) 2, "Macho", "Cafe", 1.2);
+        Mascota animal = new Mascota("00000001", "Mailo", "Roedor", "Hamster", (byte) 2, "Macho", "Cafe", 1.2);
+        assertEquals("00000001", animal.numeroIdentificacion());
         assertEquals("Mailo", animal.nombre());
         assertEquals("Roedor", animal.especie());
         assertEquals("Hamster", animal.raza());
@@ -36,7 +37,7 @@ public class AnimalTest {
     @Test
     public void datosNulos() {
         LOG.info("Iniciado de la prueba de datos nulos");
-        assertThrows(Throwable.class, () -> new Animal("Mailo", null, null, (byte) 0, null, null, 0));
+        assertThrows(Throwable.class, () -> new Mascota("00000001", "Mailo", null, null, (byte) 0, null, null, 0));
         LOG.info("Finalizacion prueba datos nulos");
 
     }
@@ -44,7 +45,7 @@ public class AnimalTest {
     @Test
     public void datosVacios() {
         LOG.info("Iniciado de la prueba de datos vacios");
-        assertThrows(Throwable.class, () -> new Animal("", "", "", (byte) 0, "", "", 0));
+        assertThrows(Throwable.class, () -> new Mascota("", "", "", "", (byte) 0, "", "", 0));
         LOG.info("fin prueba datos vacios");
 
     }
@@ -52,7 +53,8 @@ public class AnimalTest {
     @Test
     public void datosNegativos() {
         LOG.info("Iniciando de la prueba de datos negativos");
-        assertThrows(Throwable.class, () -> new Animal("Mailo", "Roedor", "Hamster", (byte) -2, "M", "Cafe", -1.2));
+        assertThrows(Throwable.class,
+                () -> new Mascota("00000001", "Mailo", "Roedor", "Hamster", (byte) -2, "M", "Cafe", -1.2));
         LOG.info("finalizacion de la prueba de datos negativos");
 
     }
