@@ -14,10 +14,18 @@ public class VeterinariaTest {
     private static final Logger LOG = Logger.getLogger(VeterinariaTest.class.getName());
 
     @Test
+    public void datosCompletos(){
+        LOG.info("Inicio datosCompletos");
+        var veterinaria = new Veterinaria("Amigos peludos");
+        assertEquals("Amigos peludos", veterinaria.getNombre());
+        LOG.info("Finalizacion datosCompletos");
+    }
+
+    @Test
     public void agregarMascota() {
         LOG.info("Iniciando agregarMascota");
         var veterinaria = new Veterinaria("Amigos Peludos");
-        var mascota = new Mascota("00000001", "Mailo", "Roedor", "Hasmter", (byte) 1, "Macho", "Cafe", 1.2);
+        var mascota = new Mascota("00000001", "Mailo", "Roedor", "Hamster", (byte) 1, "Macho", "Cafe", 1.2);
         veterinaria.registrarMascota(mascota);
         assertTrue(veterinaria.getMascotas().contains(mascota));
         assertEquals(1, veterinaria.getMascotas().size());
@@ -36,7 +44,7 @@ public class VeterinariaTest {
     public void agregarMascotaRepetida() {
         LOG.info("Inicio agregarMascotaRepetida");
         var veterinaria = new Veterinaria("Amigos Peludos");
-        var mascota1 = new Mascota("00000001", "Mailo", "Roedor", "Hasmter", (byte) 1, "Macho", "Cafe", 1.2);
+        var mascota1 = new Mascota("00000001", "Mailo", "Roedor", "Hamster", (byte) 1, "Macho", "Cafe", 1.2);
         var mascota2 = new Mascota("00000001", "Rex", "Perro", "Criollo", (byte) 12, "Macho", "negro", 12.5);
         veterinaria.registrarMascota(mascota1);
         assertThrows(Throwable.class, () -> veterinaria.registrarMascota(mascota2));
@@ -47,7 +55,7 @@ public class VeterinariaTest {
     public void obtenerMayoresDe10() {
         LOG.info("inicio obtenerMayores10");
         var veterinaria = new Veterinaria("Amigos Peludos");
-        var mascota1 = new Mascota("00000001", "Mailo", "Roedor", "Hasmter", (byte) 1, "Macho", "Cafe", 0.15);
+        var mascota1 = new Mascota("00000001", "Mailo", "Roedor", "Hamster", (byte) 1, "Macho", "Cafe", 0.15);
         var mascota2 = new Mascota("00000002", "Rex", "Perro", "Criollo", (byte) 12, "Macho", "negro", 12.5);
         var mascota3 = new Mascota("00000003", "Nala", "Perro", "Criollo", (byte) 6, "Hembra",
                 "Blanco con manchas cafes", 9.2);
@@ -68,7 +76,7 @@ public class VeterinariaTest {
             }
         }
         System.out.println("Mascotas mayores de 10 años");
-        for (Mascota mascota : mascotasMayoresDe10){
+        for (Mascota mascota : mascotasMayoresDe10) {
             System.out.println(mascota.getNombre());
         }
         LOG.info("finalizacion obtenerMayoresDe10 ");
