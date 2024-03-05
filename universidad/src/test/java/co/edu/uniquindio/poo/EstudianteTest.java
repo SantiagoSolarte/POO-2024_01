@@ -9,7 +9,6 @@ package co.edu.uniquindio.poo;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 import java.util.logging.Logger;
 import org.junit.jupiter.api.Test;
 
@@ -25,7 +24,7 @@ public class EstudianteTest {
         Estudiante estudiante = new Estudiante("Santiago", "Solarte", "1059355828", "3217651592", "santiago.solartet@uqvirtual.edu.co", 18);
         assertEquals("Santiago", estudiante.nombres());
         assertEquals("Solarte", estudiante.apellidos());
-        assertEquals("1059355828", estudiante.numeroidentificacion());
+        assertEquals("1059355828", estudiante.numeroIdentificacion());
         assertEquals("3217651592", estudiante.telefono());
         assertEquals("santiago.solartet@uqvirual.edu.co", estudiante.correo());
         assertEquals(18, estudiante.edad());
